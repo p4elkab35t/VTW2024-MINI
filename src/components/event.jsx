@@ -10,6 +10,8 @@ import {
     Avatar,
     AvatarImage
  } from "@/src/components/ui/avatar";
+import Link from "next/link";
+
 
 const EventCard = ({ event }) => {
     console.log(event);
@@ -24,6 +26,7 @@ const EventCard = ({ event }) => {
     });
   return (
     <div className="flex-1 min-w-[250px] max-w-[350px]">
+    <Link href={`/event/${event.id}`}>
     <Card className="p-2 flex-1 flex flex-col content-around justify-around border-0 shadow-xl">
         <CardContent className="relative aspect-square overflow-hidden p-0">
             <Image layout="fill" className="rounded-lg" objectPosition="center top" objectFit="cover" src="/images/sample_event.jpg" alt="Event Pic"/>
@@ -64,6 +67,7 @@ const EventCard = ({ event }) => {
             </div>
         </div> */}
     </Card>
+    </Link>
     </div>
   );
 }
