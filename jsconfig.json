@@ -1,7 +1,10 @@
 {
   "compilerOptions": {
+    "jsx": "react",
     "paths": {
       "@/*": ["./src/*"]
     }
-  }
+  },
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "**/*.js", "**/*.jsx"],
+  "exclude": ["node_modules", "public", "out", "dist", "build"]
 }
