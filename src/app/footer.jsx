@@ -1,7 +1,7 @@
 export default function Footer() {
    return (
-      <div className="bg-black text-white">
-         <h1 className="text-center font-bold text-2xl">VIBE</h1>
+      <div className="fixed bottom-0 bg-black text-white w-full mx-auto inset-x-0">
+         <h1 className="text-center font-bold text-2xl my-4">VIBE</h1>
          <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">         
          <div className="">         
          <div className="flex flex-row items-center justify-center mb-5">       
@@ -17,7 +17,7 @@ export default function Footer() {
             <button>Get in touch</button>
             <button>FAQs</button>
          </div>
-         <hr/>
+         <hr className="my-5"/>
          <div className="flex flex-row mb-5">
             <div className="flex flex-row gap-30">
                <button className="gap-30 mx-1 bg-purple-500 p-[5px] rounded">English</button>
