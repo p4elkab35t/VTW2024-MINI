@@ -4,6 +4,7 @@ import "./globals.css";
 import Providers from "../components/QueryProvider";
 import Footer from "../components/Footer";
 import Nav from "../components/Nav";
+import Hero from "../components/hero";
 
 export const metadata = {
   title: "Create Next App",
@@ -18,6 +19,7 @@ export default function RootLayout({ children }) {
           <div className="my-5">
             <Nav /> 
           </div>
+          <Hero />
           <Providers>
             {children}
           </Providers>
