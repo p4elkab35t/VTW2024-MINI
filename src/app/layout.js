@@ -19,7 +19,6 @@ export default function RootLayout({ children }) {
           <div className="my-5">
             <Nav /> 
           </div>
-          <Hero />
           <Providers>
             {children}
           </Providers>
