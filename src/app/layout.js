@@ -1,7 +1,7 @@
 import localFont from "next/font/local";
 import "./globals.css";
 
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import { QueryClient } from '@tanstack/react-query'
 import Providers from "../components/QueryProvider";
 
 const queryClient = new QueryClient()
