@@ -7,7 +7,7 @@ export default function Footer() {
                <div className="flex flex-row items-center justify-center mb-5 w-full">
                   <form method="POST">
                      <input type="text" name="email" placeholder="Enter your email" className="gap-16 p-[5px] rounded" />
-                     <button type="submit" className="gap-16 mx-3 bg-purple-500 p-[5px] rounded">Subcribe</button>
+                     <button type="submit" className="gap-16 mx-3 bg-violet-700 p-[5px] rounded">Subcribe</button>
                   </form>
                </div>
                <div className="flex flex-row gap-16 mx-3 items-center justify-center text-center">
@@ -20,7 +20,7 @@ export default function Footer() {
                <hr className="my-5" />
                <div className="flex flex-row mb-5">
                   <div className="flex flex-row gap-30">
-                     <button className="gap-30 mx-1 bg-purple-500 p-[5px] rounded">English</button>
+                     <button className="gap-30 mx-1 bg-violet-700 p-[5px] rounded">English</button>
                      <button className="gap-30 mx-1">French</button>
                      <button className="gap-30 mx-1">Hindi</button>
                   </div>
