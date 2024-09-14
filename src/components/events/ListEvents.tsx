@@ -4,6 +4,7 @@ import React from 'react'
 import { useQuery } from '@tanstack/react-query'
 import { fetchEvents } from '../../api/fetchEvents'
 import Link from 'next/link'
+import EventCard from '@/src/components/event'
 
 export default function ListEvents() {
   const { data: events, isLoading, error } = useQuery({
@@ -15,10 +16,10 @@ export default function ListEvents() {
   if (error) return <div>Error: {error.message}</div>
 
   return (
-    <ul>
+    <div className="flex flex-wrap gap-4 p-4">
       {events?.map((event) => (
-        <li key={event.id}><Link href={`/event/${event.id}`}>{event.name}</Link></li>
+        <EventCard key={event.id} event={event} />
       ))}
-    </ul>
+    </div>
   )
 }
