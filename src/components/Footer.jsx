@@ -1,6 +1,6 @@
 export default function Footer() {
    return (
-      <div className="fixed bottom-0 bg-black text-white w-full mx-auto inset-x-0">
+      <div className="bg-black text-white w-full mx-auto inset-x-0 pt-1">
          <h1 className="text-center font-bold text-2xl my-4">VIBE</h1>
          <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">         
          <div className="">         

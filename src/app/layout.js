@@ -1,21 +1,9 @@
 import localFont from "next/font/local";
 import "./globals.css";
 
-import { QueryClient } from '@tanstack/react-query'
 import Providers from "../components/QueryProvider";
-
-const queryClient = new QueryClient()
-
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
+import Footer from "../components/Footer";
+import Nav from "../components/Nav";
 
 export const metadata = {
   title: "Create Next App",
@@ -25,12 +13,16 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        <Providers>
-          {children}
-        </Providers>
+      <body>
+        <div className="container mx-auto max-w-[1320px]">
+          <div className="my-5">
+            <Nav /> 
+          </div>
+          <Providers>
+            {children}
+          </Providers>
+        </div>
+        <Footer />
       </body>
     </html>
   );
