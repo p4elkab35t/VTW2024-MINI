@@ -4,17 +4,17 @@ import {
     CardDescription,
     CardHeader, 
     Card 
-} from "@/components/ui/card";
+} from "@/src/components/ui/card";
 
 import { 
     Avatar,
     AvatarImage
- } from "@/components/ui/avatar";
+ } from "@/src/components/ui/avatar";
 
-export const EventCard = ({ event }) => {
+const EventCard = ({ event }) => {
     console.log(event);
 
-    const dateForamtted = new Date(event.date).toLocaleDateString('en-US', {
+    const dateForamtted = new Date(event.start_date).toLocaleDateString('en-US', {
         weekday: 'short',
         month: 'short',
         day: 'numeric',
@@ -23,22 +23,29 @@ export const EventCard = ({ event }) => {
         minute: 'numeric'
     });
   return (
-    <Card className="w-full h-full max-w-[20rem] max-h-[32rem] p-2 flex flex-col content-around justify-around">
+    <div className="flex-1 min-w-[250px] max-w-[350px]">
+    <Card className="p-2 flex-1 flex flex-col content-around justify-around border-0 shadow-xl">
         <CardContent className="relative aspect-square overflow-hidden p-0">
-            <Image layout="fill" className="rounded-lg" objectPosition="center top" objectFit="cover" src={event.logo.src} alt={event.logo.alt} />
+            <Image layout="fill" className="rounded-lg" objectPosition="center top" objectFit="cover" src="/images/sample_event.jpg" alt="Event Pic"/>
         </CardContent>
         <CardHeader className="text-left p-0 pt-4 font-[500]">
             <p className="event-card__date text-[#6200EE] text-base font-medium">{dateForamtted}</p>
-            <h2 className="event-card__title font-bold text-lg">{event.title}</h2>
+            <h2 className="event-card__title font-bold text-lg">{event.name}</h2>
             <p className="event-card__description text-base text-[#7E7E7E]">{event.description}</p>
-            <div className="pt-2 flex flex-row  -space-x-4">
-                {event.attendees.map((attendee, index) => {
-                    return (
-                        <Avatar key={index}  alt={attendee.avatar.alt} className="border-4 border-white">
-                            <AvatarImage src={attendee.avatar.src} />    
-                        </Avatar>
-                    );
-                })}
+            <div className="pt-2 flex flex-row -space-x-4">
+                {
+                    event.attendees ? event.attendees.map((attendee, index) => {
+                        return (
+                            <Avatar key={index}  alt={attendee.avatar.alt} className="border-4 border-white">
+                                <AvatarImage src={attendee.avatar.src} />    
+                            </Avatar>
+                        );
+                    }) : 
+                    <Avatar className="border-4 border-white">
+                        <AvatarImage src="https://placehold.co/32x32" />
+                    </Avatar>
+                }
+                
             </div>
         </CardHeader>
 
@@ -57,5 +64,8 @@ export const EventCard = ({ event }) => {
             </div>
         </div> */}
     </Card>
+    </div>
   );
 }
+
+export default EventCard;
