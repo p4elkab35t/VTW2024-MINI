@@ -15,8 +15,8 @@ const STEPS = {
     CONFIRMATION: 3
 }   
 
-export default function EventSignup({ event }: any) {
-    const { data: attendees } = useEventAttendees(event.id as string)
+export default function EventSignup({ event }) {
+    const { data: attendees } = useEventAttendees(event.id)
     const [step, setStep] = useState(STEPS.SIGNUP)
     const [buddy, setBuddy] = useState(true)
     const dateFormatted = new Date(event?.start_date).toLocaleDateString('en-US', {
