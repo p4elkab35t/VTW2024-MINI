@@ -1,6 +1,10 @@
 import ListEvents from "../components/events/ListEvents";
 import CustomSelect from "../components/ui/select";
 import Hero from "../components/hero";
+
+export const metadata = {
+  title: 'VIBE - Buddy system for events'
+}
 export default function Home() {
   return (
     <div className="container mx-auto max-w-[1320px]">

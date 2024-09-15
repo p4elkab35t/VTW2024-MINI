@@ -15,6 +15,12 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
+        
+      <link
+        rel="shortcut icon"
+        href="/images/icon.png"
+        type="image/png"
+      />
         <div className="container mx-auto max-w-[1320px]">
           <div className="my-5">
             <Nav /> 

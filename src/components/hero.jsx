@@ -3,17 +3,17 @@ import Image from 'next/image';
 export default function Hero() {
   return (
     <>
-      <section className="relative h-screen md:h-[600px] mx-2">
-        <div className="overflow-hidden">
+      <section className="relative h-screen md:h-[600px] mx-2 rounded-lg">
+        <div className="overflow-hidden rounded-lg">
         <Image
           src="/images/hero.png"
           alt="Hero Image"
           layout="fill"
           objectFit="cover"
-          className="absolute inset-0 z-0"
+          className="absolute inset-0 z-0 rounded-lg"
         />
         </div>
-        <div className="relative z-10 flex flex-col justify-center items-center h-full text-center bg-black bg-opacity-50">
+        <div className="relative z-10 flex flex-col justify-center items-center h-full text-center bg-black bg-opacity-50 rounded-lg">
           <h1 className="text-5xl font-bold text-white mb-4">BY THE COMMUNITY</h1>
           <h1 className="text-5xl font-bold text-white mb-4">FOR THE COMMUNITY</h1>
           <a
@@ -26,7 +26,7 @@ export default function Hero() {
       </section>
 
       {/* New Section */}
-      <section className="bg-black text-white py-6 px-9 mx-12">
+      <section className=" bg-black z-30 relative text-white py-6 px-9 -mt-10 mx-12 rounded-lg">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row justify-center items-center space-y-6 md:space-y-0 md:space-x-8">
             {/* Dropdown 1 */}
