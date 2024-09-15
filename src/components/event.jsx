@@ -11,10 +11,13 @@ import {
     AvatarImage
  } from "@/src/components/ui/avatar";
 import Link from "next/link";
+import { useEventAttendees } from "../hooks/useEventAttendees";
 
 
 const EventCard = ({ event }) => {
     console.log(event);
+    const { data: attendees, isLoading: isAttendeesLoading, error: attendeesError } = useEventAttendees(event.id)
+    console.log({attendees})
 
     const dateForamtted = new Date(event.start_date).toLocaleDateString('en-US', {
         weekday: 'short',
@@ -37,15 +40,15 @@ const EventCard = ({ event }) => {
             <p className="event-card__description text-base text-[#7E7E7E]">{event.description}</p>
             <div className="pt-2 flex flex-row -space-x-4">
                 {
-                    event.attendees ? event.attendees.map((attendee, index) => {
+                    attendees?.length > 0 ? attendees.map((attendee, index) => {
                         return (
-                            <Avatar key={index}  alt={attendee.avatar.alt} className="border-4 border-white">
-                                <AvatarImage src={attendee.avatar.src} />    
+                            <Avatar key={index}  alt={attendee?.users?.name} className="border-4 border-white">
+                                <AvatarImage src={`https://i.pravatar.cc/150?u=${attendee?.users?.email}`} />    
                             </Avatar>
                         );
                     }) : 
                     <Avatar className="border-4 border-white">
-                        <AvatarImage src="https://placehold.co/32x32" />
+                        <AvatarImage src="https://i.pravatar.cc/150?u=fake@pravatar.com" />
                     </Avatar>
                 }
                 
