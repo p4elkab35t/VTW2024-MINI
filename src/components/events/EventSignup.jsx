@@ -1,5 +1,6 @@
 import { useEventAttendees } from "@/src/hooks/useEventAttendees";
 import { Calendar, MapPin, User, UsersRound } from "lucide-react";
+import { Linkedin } from 'lucide-react';
 import EventAttendees from "./EventAttendees";
 import { 
     Avatar,
@@ -82,7 +83,8 @@ export default function EventSignup({ event }) {
                             <AvatarImage src="https://i.pravatar.cc/300?u=fak_323@pravatar.com" />
                         </Avatar>
                         <span className="text-md font-bold text-center mx-4"><span className="text-[#6200EE]">Amanda</span> is your assigned buddy!</span>   
-                        <p className="text-sm text-gray-500 underline text-center">See buddy&apos;s details</p>
+                        <a href="#" className="text-sm text-violet-700 underline text-center flex flex-row items-center py-3 space-x-2"><span><Linkedin size={15} /></span><span> See buddy&apos;s details</span></a>
+                        
                     </div>
                     <button className="bg-[#6200EE] text-white px-4 py-2 rounded-md" onClick={handleNextStep}>Confirm</button>
                 </>
