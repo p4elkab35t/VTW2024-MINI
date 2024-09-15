@@ -35,7 +35,7 @@ const EventCard = ({ event }) => {
     <Link href={`/event/${event.id}`}>
     <Card className="p-2 flex-1 flex flex-col content-around justify-around border-0 shadow-xl">
         <CardContent className="relative aspect-square overflow-hidden p-0">
-            <Image layout="fill" className="rounded-lg" objectPosition="center top" objectFit="cover" src="/images/sample_event.jpg" alt="Event Pic"/>
+            <Image layout="fill" className="rounded-lg" objectPosition="center top" objectFit="cover" src={event.image_url} alt="Event Pic"/>
         </CardContent>
         <CardHeader className="text-left p-0 pt-4 font-[500]">
             <p className="event-card__date text-[#6200EE] text-base font-medium">{dateForamtted}</p>

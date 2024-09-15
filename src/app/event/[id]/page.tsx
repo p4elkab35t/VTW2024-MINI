@@ -37,9 +37,9 @@ const formateDate = (date) => new Date(date).toLocaleDateString('en-US', {
       <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet" />
       </Head>
     <div className="relative">     
-      <div className="grid grid-cols-2 gap-4 w-full h-[400px] bg-cover bg-center" style={{ backgroundImage: "url('/images/sample_event.jpg')" }}>      
+      <div className="grid grid-cols-2 gap-4 w-full h-[400px] bg-cover bg-center" style={{ backgroundImage: `url(${event.image_url})` }}>      
         <div className="my-5 font-bold text-white mx-5">
-          <button className="gap-16 mx-3 bg-purple-500 p-[5px] rounded">Go Back</button>
+          <button className="gap-16 mx-3 bg-purple-500 p-[5px] rounded" onClick={()=>{window.history.go(-1); return false;}}>Go Back</button>
           <h1 style={{ fontSize: '3rem' }}>{event?.name}</h1>
           <p>{event?.venue_name}</p>
           </div>  
