@@ -1,6 +1,6 @@
 'use client'
 import Image from "next/image";
-import { Facebook,X, Instagram} from 'lucide-react';
+import { Facebook,X, Instagram,CalendarCheck, Locate,ArrowUpRight } from 'lucide-react';
 
 import React from 'react'
 import { useQuery } from '@tanstack/react-query'
@@ -36,8 +36,46 @@ const dateForamtted = new Date(event.start_date).toLocaleDateString('en-US', {
       <link rel="preconnect" href="https://fonts.gstatic.com"/>
       <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet" />
       </Head>
-    <div>
-      {/* <p>Image</p> */}
+    <div>     
+      <div className="grid grid-cols-2 gap-4 w-full h-[400px] bg-cover bg-center" style={{ backgroundImage: "url('/images/sample_event.jpg')" }}>      
+        <div className="my-5 font-bold text-white mx-5">
+          <button className="gap-16 mx-3 bg-purple-500 p-[5px] rounded">Go Back</button>
+          <h1 style={{ fontSize: '3rem' }}>AWS Community Day</h1>
+          <p>Vancouver Cloud Events</p>
+          </div>  
+        <div style={{ border:"1px solid green" }}>
+          <div className="card">
+            <div className="max-w-sm mx-auto bg-white rounded-lg shadow-lg overflow-hidden">
+              {/* <img className="w-full h-48 object-cover" src="https://via.placeholder.com/400x300" alt="Card Image" /> */}
+              <div className="p-6">
+                <h2 className="text-xl font-bold mb-2">Sign up now</h2>
+                <hr/>
+                <div>
+                  <div className="flex flex-row my-2">
+                    <CalendarCheck className="mx-1" />
+                    <div>
+                      <p>Tuesday, September 17, 2024</p>
+                      <p>2:00PM - 6:00PM PDT</p>
+                    </div>                   
+                  </div>
+                  <div className="flex flex-row">
+                      <Locate className="mx-1"/>
+                      <div>
+                        <h2 className="font-bold inline-flex">Vancouver Playhouse <span className="text-gray-500"><ArrowUpRight /></span></h2>
+                        <p>Vancouver, British Columbia</p>
+                      </div>                     
+                  </div> 
+                  <div></div>
+                    <div className="my-5">
+                      <button className="gap-16 mx-3 bg-purple-500 px-[105px] py-[10px] rounded text-white">Subscribe</button>
+                      </div>
+                </div>                
+              </div>
+          </div>
+
+          </div>
+        </div>
+      </div> 
     </div>
       <div className="grid grid-cols-2 gap-4">
         <div className="col">
