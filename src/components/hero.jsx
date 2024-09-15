@@ -65,6 +65,33 @@ export default function Hero() {
           </div>
         </div>
       </section>
+      
+      <section className="bg-violet-950 text-white py-12 w-full mt-40">
+      <div className="container mx-auto flex flex-col md:flex-row items-center">
+        <div className="w-full md:w-1/2 mb-8 md:mb-0">
+          <Image
+            src="/images/object.png" // Replace with your actual image path
+            alt="Section Image"
+            width={500} 
+            height={500}
+            className="rounded-lg shadow-lg px-8"
+          />
+        </div>
+
+        <div className="w-full md:w-1/2 text-center md:text-left px-6">
+          <h2 className="text-4xl font-bold mb-4">Buddy Up with VIBE for Meaningful Connections</h2>
+          <p className="text-lg mb-6">
+          A buddy is a fellow attendee from the tech industry who will be paired with you for an event you signed up for, providing an opportunity to learn together and connect with each other throughout the experience.
+          </p>
+          <a
+            href="#learn-more"
+            className="bg-violet-700 text-white py-2 px-6 rounded-lg text-lg hover:bg-blue-700"
+          >
+            Join with a Buddy Now
+          </a>
+        </div>
+      </div>
+    </section>
     </>
   );
 }
