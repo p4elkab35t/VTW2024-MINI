@@ -3,7 +3,8 @@ import Image from 'next/image';
 export default function Hero() {
   return (
     <>
-      <section className="relative h-screen mx-2">
+      <section className="relative h-screen md:h-[600px] mx-2">
+        <div className="overflow-hidden">
         <Image
           src="/images/hero.png"
           alt="Hero Image"
@@ -11,6 +12,7 @@ export default function Hero() {
           objectFit="cover"
           className="absolute inset-0 z-0"
         />
+        </div>
         <div className="relative z-10 flex flex-col justify-center items-center h-full text-center bg-black bg-opacity-50">
           <h1 className="text-5xl font-bold text-white mb-4">BY THE COMMUNITY</h1>
           <h1 className="text-5xl font-bold text-white mb-4">FOR THE COMMUNITY</h1>
