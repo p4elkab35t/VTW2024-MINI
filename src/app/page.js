@@ -12,7 +12,6 @@ export default function Home() {
           <CustomSelect options={["All Events", "Upcoming Events", "Past Events"]} />
         </div>
         <ListEvents />
-
       </main>
     </div>
     </div>
