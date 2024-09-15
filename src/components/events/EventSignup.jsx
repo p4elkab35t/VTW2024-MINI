@@ -109,6 +109,7 @@ export default function EventSignup({ event }) {
                         <a href="#" className="text-sm text-violet-700 underline text-center flex flex-row items-center py-3 space-x-2"><span><Linkedin size={15} /></span><span> See buddy&apos;s details</span></a>
                         
                     </div>
+                    <button className="bg-white border-2 border-gray-300 text-gray-500 px-4 py-2 rounded-md mb-2">Find a New Buddy</button>
                     <button className="bg-[#6200EE] text-white px-4 py-2 rounded-md" onClick={handleNextStep}>Confirm</button>
                 </>
             )}
