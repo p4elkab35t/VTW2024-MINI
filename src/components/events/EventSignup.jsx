@@ -1,11 +1,17 @@
 import { useEventAttendees } from "@/src/hooks/useEventAttendees";
-import { Calendar, MapPin, User, UsersRound } from "lucide-react";
+import { Calendar, Info, MapPin, User, UsersRound } from "lucide-react";
 import { Linkedin } from 'lucide-react';
 import EventAttendees from "./EventAttendees";
 import { 
     Avatar,
     AvatarImage
  } from "@/src/components/ui/avatar";
+ import {
+    Tooltip,
+    TooltipContent,
+    TooltipProvider,
+    TooltipTrigger,
+  } from "@/src/components/ui/tooltip"
 
 import { useState } from "react";
 
@@ -35,15 +41,32 @@ export default function EventSignup({ event }) {
         minute: 'numeric'
     });
 
-    const title = step === STEPS.SIGNUP ? "Sign up now" : "Would you like a buddy to go with?"
-
     const handleNextStep = () => {
         setStep(step + 1)
     }
 
     return (
-        <div className="w-[360px] bg-white rounded-md shadow-md flex flex-col content-around justify-around px-4 py-4">
-            {step < 2 && <div className="text-xl font-bold border-b border-gray-300 pb-4">{title}</div>}
+        <div className="w-[400px] bg-white rounded-md shadow-md flex flex-col content-around justify-around px-4 py-4">
+            {step < 2 && (
+                <div className="text-xl font-bold border-b border-gray-300 pb-4">
+                    {step === STEPS.SIGNUP ?
+                        "Sign up now"
+                        :
+                        <div className="flex flex-row items-center space-x-1">
+                            <span>Would you like a buddy to go with?</span>
+                            <TooltipProvider>
+                                <Tooltip>
+                                    <TooltipTrigger><Info size={15} /></TooltipTrigger>
+                                    <TooltipContent className="bg-black text-white max-w-[300px] text-xs">
+                                        A buddy is a fellow attendee from the tech industry who will be paired with you for the event, providing an opportunity to learn together and connect with each other throughout the experience. It is completely free!
+                                    </TooltipContent>
+                                </Tooltip>
+                            </TooltipProvider>
+
+                        </div>
+                    }
+                </div>
+            )}
 
             {step === STEPS.SIGNUP && (
                 <>
@@ -70,7 +93,7 @@ export default function EventSignup({ event }) {
                 <>
                     <div className="flex flex-row space-x-3 my-3">
                         <button className="bg-white hover:bg-[#6200EE] w-full text-black border border-gray-300 hover:text-white px-4 py-2 rounded-md data-[selected=true]:bg-[#6200EE] data-[selected=true]:text-white flex flex-row items-center justify-center" data-selected={buddy} onClick={() => setBuddy(true)}><UsersRound />Yes</button>
-                        <button className="bg-white hover:bg-[#6200EE] w-full text-black border border-gray-300 hover:text-white px-4 py-2 rounded-md data-[selected=true]:bg-[#6200EE] data-[selected=true]:text-white flex flex-row items-center justify-center" data-selected={!buddy} onClick={() => setBuddy(false)}><User />No</button>
+                        <button className="bg-white hover:bg-[#6200EE] w-full text-black border border-gray-300 hover:text-white px-4 py-2 rounded-md data-[selected=true]:bg-[#6200EE] data-[selected=true]:text-white flex flex-row items-center justify-center" data-selected={!buddy} onClick={() => setStep(STEPS.CONFIRMATION)}><User />No</button>
                     </div>
                     <button className="bg-[#6200EE] text-white px-4 py-2 rounded-md" onClick={handleNextStep}>Next</button>
                 </>
