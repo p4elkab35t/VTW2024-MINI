@@ -27,6 +27,9 @@ const EventCard = ({ event }) => {
         hour: 'numeric',
         minute: 'numeric'
     });
+
+    const shortDescription = event?.description.length > 100 ? event.description.substring(0, 100) + "..." : event.description ;
+
   return (
     <div className="flex-1 min-w-[250px] max-w-[350px]">
     <Link href={`/event/${event.id}`}>
@@ -37,7 +40,7 @@ const EventCard = ({ event }) => {
         <CardHeader className="text-left p-0 pt-4 font-[500]">
             <p className="event-card__date text-[#6200EE] text-base font-medium">{dateForamtted}</p>
             <h2 className="event-card__title font-bold text-lg">{event.name}</h2>
-            <p className="event-card__description text-base text-[#7E7E7E]">{event.description}</p>
+            <p className="event-card__description text-base text-[#7E7E7E]">{shortDescription}</p>
             <div className="pt-2 flex flex-row -space-x-4">
                 {
                     attendees?.length > 0 ? attendees.map((attendee, index) => {

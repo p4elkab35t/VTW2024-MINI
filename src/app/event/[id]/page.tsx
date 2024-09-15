@@ -20,8 +20,7 @@ const { id } = useParams();
   if (isLoading) return <div>Loading...</div>
   if (error) return <div>Error: {error.message}</div>
 
-console.log(event)
-const dateForamtted = new Date(event.start_date).toLocaleDateString('en-US', {
+const formateDate = (date) => new Date(date).toLocaleDateString('en-US', {
   weekday: 'short',
   month: 'short',
   day: 'numeric',
@@ -57,7 +56,8 @@ const dateForamtted = new Date(event.start_date).toLocaleDateString('en-US', {
           </div>
           <div>
             <h2 className="text-xl font-bold my-4">Time</h2>
-            <p className="text-gray-500">weekdays hours: <span className="text-purple-500 font-bold">{dateForamtted}</span></p>
+            <p className="text-gray-500">Start time: <span className="text-purple-500 font-bold">{formateDate(event?.start_date)}</span></p>
+            <p className="text-gray-500">End time: <span className="text-purple-500 font-bold">{formateDate(event?.end_date)}</span></p>
           </div>
           <div>
             <h2 className="text-xl font-bold my-4">Organizer contact</h2>
